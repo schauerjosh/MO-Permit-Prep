@@ -2,87 +2,998 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MO Permit Prep</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MO Permit Prep – Missouri Driver’s Permit Test Quiz App</title>
+    <meta name="description" content="MO Permit Prep helps Missouri residents pass the Missouri Driver’s Permit Test with 200+ unique questions and bite-sized study sessions. No accounts, no stress." />
+    <meta name="keywords" content="Missouri permit test, MO Permit Prep, Missouri driver’s license, permit quiz app, Missouri DMV, driving test prep, permit test practice, Missouri driver guide" />
+    <meta name="author" content="MO Permit Prep" />
+    <meta name="theme-color" content="#00d4ff" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com/" />
+    <meta property="og:title" content="MO Permit Prep – Missouri Driver’s Permit Test Quiz App" />
+    <meta property="og:description" content="Pass your Missouri Driver’s Permit Test with MO Permit Prep’s 200+ unique questions and bite-sized study sessions." />
+    <meta property="og:image" content="screenshot1.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://yourdomain.com/" />
+    <meta property="twitter:title" content="MO Permit Prep – Missouri Driver’s Permit Test Quiz App" />
+    <meta property="twitter:description" content="Pass your Missouri Driver’s Permit Test with MO Permit Prep’s 200+ unique questions and bite-sized study sessions." />
+    <meta property="twitter:image" content="screenshot1.png" />
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "MO Permit Prep",
+      "description": "Mobile quiz app to help Missouri residents pass the Missouri Driver’s Permit Test with 200+ unique questions and bite-sized study sessions.",
+      "applicationCategory": "EducationApplication",
+      "operatingSystem": "iOS",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+    /* Exact styling from cratequiet.com index.html */
+
     body {
-        margin: 0;
-        font-family: 'Inter', sans-serif;
-        background: radial-gradient(circle at top left, #1a1a2e, #0f0f1f);
-        color: #ffff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem;
-    }
-    h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: #00f7ff;
-    }
-    p {
-        font-size: 1.1rem;
-        max-width: 700px;
-        text-align: center;
-        color: #bbbb;
-    }
-    .button {
-        margin-top: 2rem;
-        padding: 1rem 2rem;
-        font-size: 1.2rem;
-        background: linear-gradient(to right, #00f7ff, #7f00ff);
-        color: white;
-        border: none;
-        border-radius: 12px;
-        cursor: pointer;
-        text-decoration: none;
-    }
-    .screenshots {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin-top: 3rem;
-        max-width: 1200px;
-        width: 100%;
-    }
-    .screenshots img {
-        width: 100%;
-        border-radius: 12px;
-        box-shadow: 0 0 10px rgba(0,255,255,0.2);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #3333;
+      background: #ffff;
+      margin: 0;
     }
 
-    /* Mobile fixes */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1rem 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00d4ff;
+      text-decoration: none;
+    }
+
+    .logo::before {
+      content: "🚦";
+      margin-right: 0.5rem;
+      font-size: 1.8rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: #3333;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00d4ff;
+    }
+
+    .cta-button {
+      background: #00d4ff;
+      color: #ffff;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 120px 0 80px;
+      text-align: center;
+      color: #3333;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: #f8f8f8;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #111827;
+    }
+
+    .hero .subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #5555;
+      font-weight: 300;
+    }
+
+    .hero .description {
+      font-size: 1.2rem;
+      margin-bottom: 2.5rem;
+      color: #7777;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .primary-cta {
+      background: #00d4ff;
+      color: #ffff;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .primary-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(0, 212, 255, 0.4);
+    }
+
+    .secondary-cta {
+      background: transparent;
+      color: #00d4ff;
+      padding: 1rem 2rem;
+      border: 2px solid #00d4ff;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .secondary-cta:hover {
+      background: rgba(0, 212, 255, 0.1);
+      border-color: #00d4ff;
+    }
+
+    .trust-indicators {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #a0a0a0;
+      font-size: 0.9rem;
+    }
+
+    /* App Preview */
+    .app-preview {
+      margin: 4rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      background: #f0f0f0;
+      padding: 4rem 0;
+    }
+
+    .phone-mockup {
+      background: #000;
+      border-radius: 30px;
+      padding: 10px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
+      overflow: hidden;
+      max-width: 280px;
+      flex: 1 1 280px;
+    }
+
+    .phone-mockup:hover {
+      transform: scale(1.05);
+    }
+
+    .phone-mockup img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      border-radius: 20px;
+    }
+
+    /* Features Section */
+    .features {
+      background: #ffff;
+      padding: 80px 0;
+      color: #3333;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #111827;
+    }
+
+    .section-header p {
+      font-size: 1.2rem;
+      color: #5555;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 3rem;
+      margin-top: 3rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .feature-card {
+      background: #f8f8f8;
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background: #00d4ff;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #121212;
+    }
+
+    .feature-card h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #111827;
+    }
+
+    .feature-card p {
+      color: #5555;
+      line-height: 1.7;
+    }
+
+    /* Who It's For Section */
+    .audience-list {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+    }
+
+    .audience-list li {
+      background: #f8f8f8;
+      border-radius: 15px;
+      padding: 1.5rem 2rem;
+      font-weight: 600;
+      color: #374151;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .audience-list li:hover, .audience-list li:focus-within {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      background: #f0f0f0;
+      padding: 80px 0;
+      color: #3333;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      margin-top: 3rem;
+    }
+
+    .testimonial-card {
+      background: #ffff;
+      backdrop-filter: blur(10px);
+      border: 1px solid #e0e0e0;
+      border-radius: 20px;
+      padding: 2rem;
+      transition: transform 0.3s ease;
+      color: #3333;
+      font-style: italic;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .testimonial-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-style: normal;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      background: #00d4ff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #121212;
+      font-weight: 700;
+      user-select: none;
+    }
+
+    .author-info h4 {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: #111827;
+    }
+
+    .author-info p {
+      color: #5555;
+      font-size: 0.9rem;
+    }
+
+    /* FAQ Section */
+    .faq {
+      background: #ffff;
+      padding: 80px 0;
+      color: #3333;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      background: #f8f8f8;
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: #3333;
+      transition: background 0.3s ease;
+      user-select: none;
+    }
+
+    .faq-question:hover {
+      background: #e0e0e0;
+    }
+
+    .faq-answer {
+      padding: 1.5rem;
+      color: #5555;
+      line-height: 1.7;
+      display: none;
+      background: #ffff;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-toggle {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+      color: #00d4ff;
+      user-select: none;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(180deg);
+    }
+
+    /* Final CTA Section */
+    .final-cta {
+      background: #f0f0f0;
+      padding: 80px 0;
+      text-align: center;
+      color: #3333;
+    }
+
+    .final-cta h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #111827;
+    }
+
+    .final-cta p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #5555;
+    }
+
+    .email-signup {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .email-input {
+      flex: 1;
+      min-width: 250px;
+      padding: 1rem 1.5rem;
+      border: 1px solid #cccc;
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+      background: #ffff;
+      color: #3333;
+    }
+
+    .signup-button {
+      background: #00d4ff;
+      color: #ffff;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .signup-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      background: #f0f0f0;
+      color: #5555;
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links a {
+      color: #5555;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #00d4ff;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero .subtitle {
+        font-size: 1.2rem;
+      }
+
+      .hero .description {
+        font-size: 1rem;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .app-preview {
+        gap: 1rem;
+      }
+
+      .phone-mockup {
+        transform: none;
+      }
+
+      .phone-mockup img {
+        max-width: 120px;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .email-signup {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .email-input {
+        min-width: 100%;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .problem-grid, .solution-grid, .steps-container, .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    /* Utility Classes */
+    .text-center {
+      text-align: center;
+    }
+
+    .mb-4 {
+      margin-bottom: 2rem;
+    }
+
+    .mt-4 {
+      margin-top: 2rem;
+    }
+
+    /* Mobile fixes for screenshots and button */
     @media (max-width: 600px) {
-        .screenshots img {
-            background: transparent !important; /* Remove any background */
-            box-shadow: none !important; /* Remove shadows */
-            border: none !important; /* Remove borders */
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px; /* Soften edges */
-        }
-        .button {
-            padding: 14px 24px !important; /* Increase padding */
-            font-size: 1.1rem; /* Slightly larger text */
-        }
+      .phone-mockup {
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        padding: 0;
+      }
+      .phone-mockup img {
+        border-radius: 8px;
+      }
+      .primary-cta, .secondary-cta, .cta-button, .signup-button {
+        padding: 14px 24px !important;
+        font-size: 1.1rem !important;
+      }
     }
     </style>
 </head>
 <body>
-    <h1>MO Permit Prep</h1>
-    <p>A clean, focused, and free app to help you pass the Missouri Driver Permit Test. Built for learners who want a simple way to succeed.</p>
-    <a href="#" class="button">Download on the App Store</a>
-    <div class="screenshots">
-        <img src="screenshot1.png" alt="App Screenshot 1" />
-        <img src="screenshot2.png" alt="App Screenshot 2" />
-        <img src="screenshot3.png" alt="App Screenshot 3" />
-        <img src="screenshot4.png" alt="App Screenshot 4" />
-    </div>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">MO Permit Prep</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#audience">Who It's For</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="#signup" class="cta-button">Download Now</a>
+        </nav>
+    </header>
 
-    <footer style="margin-top: 4rem; font-size: 0.9rem; color: #888;">
-        <a href="privacy.html" style="color: #00f7ff; margin-right: 20px;">Privacy Policy</a>
-        <a href="terms.html" style="color: #00f7ff;">Terms & Conditions</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1>Pass Your Missouri Driver’s Permit Test with Confidence</h1>
+                <p class="subtitle">200+ Unique Questions • Bite-Sized Study Sessions • No Accounts or Stress</p>
+                <p class="description">
+                    MO Permit Prep is the all-in-one mobile quiz app designed to help Missouri residents, especially first-time drivers and teens, pass the 2025 Missouri Driver’s Permit Test.
+                </p>
+                <div class="hero-cta">
+                    <a href="#signup" class="primary-cta">📱 Download Now</a>
+                    <a href="#features" class="secondary-cta">▶️ Try Demo</a>
+                </div>
+                <div class="trust-indicators">
+                    <div class="trust-item">✅ 200+ Unique Questions</div>
+                    <div class="trust-item">🎯 Modeled on 2025 Missouri Exam</div>
+                    <div class="trust-item">🔒 No Accounts or Backend</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Preview -->
+    <section class="app-preview">
+        <div class="phone-mockup">
+            <img src="screenshot1.png" alt="MO Permit Prep quiz start screen" />
+        </div>
+        <div class="phone-mockup">
+            <img src="screenshot2.png" alt="MO Permit Prep welcome screen with app name and tagline" />
+        </div>
+        <div class="phone-mockup">
+            <img src="screenshot3.png" alt="MO Permit Prep quiz question screen with multiple choice answers" />
+        </div>
+        <div class="phone-mockup">
+            <img src="screenshot4.png" alt="MO Permit Prep round complete screen with score and confetti" />
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Features for Effective Study</h2>
+                <p>Everything you need to prepare and pass your Missouri Driver’s Permit Test.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">❓</div>
+                    <h3>200+ Unique Questions</h3>
+                    <p>Modeled after the official 2025 Missouri Permit Exam to ensure you study the right material.</p>
+                </div>
+                <div class="feature-card fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Randomized Question Delivery</h3>
+                    <p>Multiple rounds with randomized questions keep your study sessions fresh and effective.</p>
+                </div>
+                <div class="feature-card fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="feature-icon">📚</div>
+                    <h3>Review Missed Questions</h3>
+                    <p>Learn from your mistakes with detailed explanations and direct links to the Missouri Driver Guide.</p>
+                </div>
+                <div class="feature-card fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy First</h3>
+                    <p>No user accounts or backend servers. All data is stored locally on your device.</p>
+                </div>
+                <div class="feature-card fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="feature-icon">📱</div>
+                    <h3>Modern Mobile Interface</h3>
+                    <p>Easy to use, visually engaging, and optimized for quick study sessions on the go.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For Section -->
+    <section id="audience" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Who It's For</h2>
+                <p>MO Permit Prep is ideal for:</p>
+            </div>
+            <ul class="audience-list">
+                <li tabindex="0">High schoolers preparing for their permit</li>
+                <li tabindex="0">Parents helping kids study</li>
+                <li tabindex="0">Adults renewing or retaking the exam</li>
+                <li tabindex="0">People with anxiety or learning difficulties</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Users Are Saying</h2>
+                <p>Real feedback from Missouri permit test takers.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in-up">
+                    <p class="testimonial-text">“I failed the permit test twice before, but MO Permit Prep helped me pass on the first try! The questions are just like the real test.”</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">J</div>
+                        <div class="author-info">
+                            <h4>Jamie R.</h4>
+                            <p>Missouri Resident</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in-up" style="animation-delay: 0.1s;">
+                    <p class="testimonial-text">“The app is easy to use and perfect for quick study sessions.”</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Alex P.</h4>
+                            <p>Parent & Study Helper</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in-up" style="animation-delay: 0.2s;">
+                    <p class="testimonial-text">“I love that there’s no account or pressure. I can study at my own pace and review what I missed. Highly recommend for nervous test takers.”</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h4>Morgan S.</h4>
+                            <p>Adult Retaking Exam</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Answers to common questions about MO Permit Prep.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is MO Permit Prep free to use?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, MO Permit Prep is completely free to download and use with no hidden fees or subscriptions.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do I need an internet connection to use the app?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, all data is stored locally on your device. You can study anytime, anywhere without internet access.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Are the questions updated for the 2025 Missouri Permit Exam?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, the app includes 200+ unique questions modeled after the official 2025 Missouri Permit Exam.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is my personal data collected or shared?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No personal data is collected or shared. The app does not require accounts or backend connections.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Where can I find the official Missouri Driver Guide?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Direct links to the official Missouri Driver Guide are included within the app for easy reference and study.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="signup">
+        <div class="container">
+            <h2>Ready to Pass Your Missouri Permit Test?</h2>
+            <p>Download MO Permit Prep today and start studying smarter.</p>
+            <div class="email-signup">
+                <input type="email" class="email-input" placeholder="Enter your email address" aria-label="Email address" />
+                <button type="submit" class="signup-button">Download Now</button>
+            </div>
+            <div class="trust-indicators" style="margin-top: 2rem;">
+                <div class="trust-item">📱 Available on iOS</div>
+                <div class="trust-item">🆓 Free to Use</div>
+                <div class="trust-item">🔒 Privacy Focused</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">MO Permit Prep</div>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+                <li><a href="mailto:support@mopermitprep.com">Support</a></li>
+            </ul>
+            <p>&copy; 2025 MO Permit Prep LLC. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+    // FAQ Toggle Functionality
+    function toggleFaq(element) {
+        const faqItem = element.parentElement;
+        const isActive = faqItem.classList.contains('active');
+
+        // Close all FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.classList.remove('active');
+        });
+
+        // Open clicked item if it wasn't already active
+        if (!isActive) {
+            faqItem.classList.add('active');
+        }
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Email signup form handling (placeholder)
+    document.querySelector('.signup-button').addEventListener('click', function(e) {
+        e.preventDefault();
+        const emailInput = document.querySelector('.email-input');
+        const email = emailInput.value;
+        if (email && email.includes('@')) {
+            alert('Thank you! Please download MO Permit Prep from the Apple App Store.');
+            emailInput.value = '';
+        } else {
+            alert('Please enter a valid email address.');
+        }
+    });
+    </script>
 </body>
 </html>
